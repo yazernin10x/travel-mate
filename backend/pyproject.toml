@@ -1,0 +1,56 @@
+# Poetry
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["Ali YARO <ali.yaro@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+flask = "^3.1.0"
+pandas = "^2.2.3"
+requests = "^2.32.3"
+beautifulsoup4 = "^4.12.3"
+pydantic = "^2.9.2"
+lxml = "^5.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pylint = "^3.3.1"
+pyment = "^0.3.3"
+mypy = "^1.13.0"
+pandas-stubs = "^2.2.3.241009"
+pdoc = "^15.0.0"
+ruff = "^0.7.3"
+types-requests = "^2.32.0.20241016" # stubs
+types-beautifulsoup4 = "^4.12.0.20241020" # stubs
+pytest-mock = "^3.14.0"
+flake8 = "^7.1.1"
+directory-tree = "^1.0.0"
+seedir = {extras = ["emoji"], version = "^0.5.0"}
+coverage = "^7.6.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Pytest
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:The 'strip_cdata' option of HTMLParser\\(\\) has never done anything and will eventually be removed:DeprecationWarning:bs4.builder._lxml"
+]
+
+# Converage
+[tool.coverage.run]
+branch = true
+# source = ["mon_projet"]
+parallel = true
+
+[tool.coverage.report]
+# show_missing = true
+skip_covered = true
+fail_under = 80
+
+[tool.coverage.html]
+directory = ".htmlcov"

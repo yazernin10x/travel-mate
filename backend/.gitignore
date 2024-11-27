@@ -1,0 +1,13 @@
+# Byte-compiled
+__pycache__/
+
+# Unit test / coverage reports
+.htmlcov/
+.coverage
+.pytest_cache/
+
+# Linter
+.ruff_cache/
+
+# Static type checkers
+.mypy_cache
